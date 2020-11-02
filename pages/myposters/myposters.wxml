@@ -1,0 +1,5 @@
+<!--pages/myposters/myposters.wxml-->
+<view class="myposters">
+	<image class='background' src="../../images/posterbg.png" mode="aspectFill"></image>
+	<canvas class="myqr" style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
+</view>

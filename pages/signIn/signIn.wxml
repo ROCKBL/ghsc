@@ -1,0 +1,46 @@
+<!--pages/signIn/signIn.wxml-->
+<view class="containerSignIn">
+	<view class="userCenterInfo">
+		<image wx:if="{{ userInfo.unlogin!=true }}" class="avatar" src="{{ userInfo.avatar }}"></image>
+		<view class="avatarUnlogin" wx:else>
+			<van-icon class="avatarUnloginIcon" name="user-circle-o" />
+		</view>
+		<view class="userCenterInfoMid">
+			<view class="userCenterInfoName">{{ userInfo.nickname }}</view>
+			<view class="userCenterInfoLevel">
+				<view class="iconfont icon-putonghuiyuan"></view>
+				<view class="userCenterInfoLevelLabel">{{ userInfo.level_name }}</view>
+			</view>
+		</view>
+	</view>
+	<view class="signInBox">
+		<view class="signInBoxTitle">
+			签到有礼
+		</view>
+		<view class="signInBoxLine">
+			<view class="longLine"></view>
+
+			<view class="signInBoxLineItem" wx:for="{{ signList }}" wx:key="label">
+				<view class="signInBoxLineItemGift" wx:if="{{ item.hasGift }}">
+					<van-icon class="giftIcon" name="point-gift" size="30rpx" color="white" />
+				</view>
+				<view wx:if="{{ number<=index }}" class="signInBoxLineItemUnitBall">+{{ item.num }}</view>
+				<view wx:else class="signInBoxLineItemUnitBallChecked">
+					<van-icon name="success" size="40rpx"/>
+				</view>
+
+				<!-- <view class="signInBoxLineItemUnit">
+					<view class="shortLine" wx:if="{{ index==0 }}"></view>
+					
+					<view class="rightLine" wx:if="{{ index!=signList.length-1 }}"></view>
+					<view class="shortLine" wx:if="{{ index==signList.length-1 }}"></view>
+				</view> -->
+
+
+				<view class="signInBoxLineItemLabel">{{ item.label }}</view>
+			</view>
+
+		</view>
+		<button class="signInBoxBtn" type="primary" bindtap="userSign">签到</button>
+	</view>
+</view>

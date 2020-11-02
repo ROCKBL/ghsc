@@ -1,0 +1,21 @@
+<!--pages/classification/classification.wxml-->
+<wxs src="../../utils/pageHelper.wxs" module="pageHelper" />
+
+<view class="containerClassification">
+    <view>
+        <scroll-view scroll-y="true" style="height: 100vh;">
+            <view>a</view>
+            
+            <view style="height:50px"></view>
+        </scroll-view>
+
+        <!-- <scroll-view scroll-y="true" style="height: 300rpx;">
+
+        </scroll-view> -->
+    </view>
+
+	<view style="height:50px;"></view>
+    <van-tabbar active="{{ active }}" active-color="#39B196" inactive-color="#515151" bind:change="onChange">
+        <van-tabbar-item icon="{{ item.icon }}" wx:for="{{ tabbarList }}" wx:key="icon">{{ item.label }}</van-tabbar-item>
+    </van-tabbar>
+</view>

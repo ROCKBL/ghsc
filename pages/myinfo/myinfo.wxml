@@ -1,0 +1,35 @@
+<!--pages/myinfo/myinfo.wxml-->
+<view class="myinfo">
+	
+	<van-cell-group >
+		<van-cell is-link value="修改" bind:click="changeAvatar" >
+			<view slot="title" class="avatarWrap">
+				<image wx:if="{{ userInfo.unlogin!=true }}" class="avatar" src="{{ userInfo.avatar }}"></image>
+				<view class="avatarUnlogin" wx:else>
+					<van-icon class="avatarUnloginIcon" name="user-circle-o" />
+				</view>
+			</view>
+		</van-cell>
+		<van-cell title="昵称" is-link value="{{ userInfo.nickname }}" bind:click="changenickname" />
+
+		<van-cell title="性别" is-link value="{{ userInfo.sex==null?'暂无':sexstr }}" bind:click="showSex" />
+		<van-cell title="生日" is-link value="{{ userInfo.birthday==0?'暂无':birthdaystr }}" bind:click="showDate" />
+	</van-cell-group>
+	<view class="cellsBlock"></view>
+	<van-cell-group >
+		<van-cell title="店铺信息" is-link  />
+		<van-cell title="微信二维码" is-link bind:click="myposters" />
+	</van-cell-group>
+	<view class="cellsBlock"></view>
+	<van-cell-group >
+		<van-cell title="我的银行卡" is-link bind:click="mybankcard" />
+	</van-cell-group>
+
+	
+	<van-popup show="{{ sexshowflag }}" position="bottom" custom-style="" bind:close="onCloseSex">
+		<van-picker columns="{{ sexOptions }}" bind:confirm="sexConfirm" bind:cancel="onCloseSex" show-toolbar />
+	</van-popup>
+	<van-popup show="{{ dateshowflag }}" position="bottom" custom-style="" bind:close="onCloseDate">
+		<van-datetime-picker type="date" value="{{ currentDate }}" bind:confirm="dateConfirm" bind:cancel="onCloseDate" min-date="{{ minDate }}" formatter="{{ formatter }}" />
+	</van-popup>
+</view>

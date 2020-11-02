@@ -1,0 +1,16 @@
+<!--pages/changeNickName/changeNickName.wxml-->
+<view>
+	<van-cell-group>
+		<van-field
+			value="{{ nickname }}"
+			placeholder="请输入新的昵称"
+			bind:change="onChange"
+			label="昵称:"
+		/>
+	</van-cell-group>
+
+	<view class="btnwrap">
+		<button class="confirmBtn" type="primary" size="default" bindtap="changeConfirm">确认修改</button>
+	</view>
+	
+</view>

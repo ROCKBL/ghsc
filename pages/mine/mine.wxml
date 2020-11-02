@@ -1,0 +1,112 @@
+<!--pages/mine/mine.wxml-->
+<view class="containerMine">
+	
+	<view class="userCenter mineBlock">
+		<view class="userCenterInfo" bindtap="seeuserinfo">
+			<image wx:if="{{ userInfo.unlogin!=true }}" class="avatar" src="{{ userInfo.avatar }}"></image>
+			<view class="avatarUnlogin" wx:else>
+				<van-icon class="avatarUnloginIcon" name="user-circle-o" />
+			</view>
+			<view class="userCenterInfoMid">
+				<view class="userCenterInfoName">{{ userInfo.nickname }}</view>
+				<view class="userCenterInfoLevel">
+					<view class="iconfont icon-putonghuiyuan"></view>
+					<view class="userCenterInfoLevelLabel">{{ userInfo.level_name }}</view>
+				</view>
+			</view>
+			<van-icon name="arrow" class="" style="margin-left:auto" />
+		</view>
+		<view class="userCenterScope">
+			<view class="userCenterScopeUnit">
+				<view class="userCenterScopeUnitName">余额(元)</view>
+				<view class="userCenterScopeUnitValue">{{ userInfo.active_money }}</view>
+			</view>
+			<view class="userCenterScopeUnit">
+				<view class="userCenterScopeUnitName">足迹(个)</view>
+				<view class="userCenterScopeUnitValue">{{ footPrint }}</view>
+			</view>
+			<view class="userCenterScopeUnit">
+				<view class="userCenterScopeUnitName">优惠劵(张)</view>
+				<view class="userCenterScopeUnitValue">{{ couponNum }}</view>
+			</view>
+		</view>
+		<!-- <view class="userCenterVip">
+			<view class="userCenterVipLabel">
+				<view class="iconfont icon-huiyuan" style="margin-right:10rpx"></view>
+				会员中心
+			</view>
+			<view class="userCenterVipBtn">
+				开通会员享特惠福利
+				<van-icon name="arrow" style="margin-left:6rpx" />
+			</view>
+		</view> -->
+	</view>
+
+	<view class="orderCenter mineBlock">
+		<view class="orderCenterHead">
+			<view class="orderCenterLabel">订单中心</view>
+			<view class="orderCenterHeadBtn">
+				查看全部订单
+				<van-icon name="arrow" />
+			</view>
+		</view>
+		<view class="orderCenterBody">
+			<view class="orderCenterUnit" wx:for="{{ orderCenter }}" wx:key="name">
+				<view class="iconfont {{ item.icon }}"></view>
+				<view class="orderCenterUnitName">{{ item.name }}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="mineBlock">
+		<image class="banner" mode="widthFix" src="../../images/minebanner.png"></image>
+	</view>
+
+	<view class="tools mineBlock">
+		<view class="toolsLabel">常用工具</view>
+		<van-grid column-num="3">
+			<van-grid-item class="toolUnit" bind:click="gopage" data-item="{{ item }}" use-slot wx:for="{{ toolsList }}" wx:key="name" >
+				<view class="iconfont {{ item.icon }}"></view>
+				<view class="toolname">{{ item.name }}</view>
+			</van-grid-item>
+		</van-grid>
+	</view>
+	<view class="service mineBlock">
+		<view class="serviceLabel">更多服务</view>
+		<van-cell wx:for="{{ serviceList }}" title="{{ item.title }}" is-link value="{{ item.value }}" wx:key="title">
+			<view slot="icon" class="iconfont {{ item.icon }}"></view>
+		</van-cell>
+		<!-- <van-cell title="我的团购" is-link >
+			<view slot="icon" class="iconfont icon-pintuangou"></view>
+		</van-cell>
+		<van-cell title="平台资讯" is-link value="教你玩转商城" >
+			<view slot="icon" class="iconfont icon-airudiantubiaohuizhi-zhuanqu_zixundongtai"></view>
+		</van-cell>
+		<van-cell title="成为供应商" is-link >
+			<view slot="icon" class="iconfont icon-supplier"></view>
+		</van-cell>
+		<van-cell title="拼团接龙" is-link  >
+			<view slot="icon" class="iconfont icon-gengduopintuan"></view>
+		</van-cell>
+		<van-cell title="我的学院" is-link value="教你玩转商城" >
+			<view slot="icon" class="iconfont icon-xueshimaoxuexibiye"></view>
+		</van-cell>
+		<van-cell title="线下活动" is-link >
+			<view slot="icon" class="iconfont icon-huodong"></view>
+		</van-cell>
+		<van-cell title="我的佣金" is-link >
+			<view slot="icon" class="iconfont icon-huaban27"></view>
+		</van-cell>
+		<van-cell title="我的推广记录" is-link >
+			<view slot="icon" class="iconfont icon-web-icon-"></view>
+		</van-cell>
+		<van-cell title="建议与投诉" is-link >
+			<view slot="icon" class="iconfont icon-bj-jy"></view>
+		</van-cell> -->
+	</view>
+
+	<view style="height:50px;"></view>
+    <van-tabbar active="{{ active }}" active-color="#39B196" inactive-color="#515151" bind:change="onChange">
+        <van-tabbar-item icon="{{ item.icon }}" wx:for="{{ tabbarList }}" wx:key="icon">{{ item.label }}</van-tabbar-item>
+    </van-tabbar>
+</view>

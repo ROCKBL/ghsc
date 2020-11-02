@@ -1,0 +1,8 @@
+<!--pages/cart/cart.wxml-->
+<view class="containerCart">
+	<van-empty wx:if="{{ goodsList.length==0 }}" description="购物车是空的" />
+
+	<van-tabbar active="{{ active }}" active-color="#39B196" inactive-color="#515151" bind:change="onChange">
+        <van-tabbar-item icon="{{ item.icon }}" wx:for="{{ tabbarList }}" wx:key="icon">{{ item.label }}</van-tabbar-item>
+    </van-tabbar>
+</view>

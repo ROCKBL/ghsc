@@ -1,0 +1,19 @@
+<!--pages/editaddress/editaddress.wxml-->
+<view class="editAddress">
+	<van-cell-group style="margin-bottom:100px;">
+		<van-field value="{{ addressInfo.name }}" bind:change="onChangeName" label="姓名" placeholder="请输入姓名" border="{{ false }}" required />
+		<van-field value="{{ addressInfo.mobile }}" bind:change="onChangeMobile" label="手机号码" placeholder="请输入手机号码" border="{{ false }}" required />
+		<van-field value="{{ areastr }}" bindtap="showPopup" label="省/市/区"  placeholder="请选择地址" readonly border="{{ false }}" required />
+		<van-field value="{{ addressInfo.address }}" bind:change="onChangeAddress" label="详细地址" placeholder="请输入详细地址" border="{{ false }}" required />
+		<!-- <van-field model:value="{{ addressInfo }}" placeholder="请输入用户名" border="{{ false }}" /> -->
+	</van-cell-group>
+	<view style="margin-top:20px"></view>
+	<van-button type="primary" block bind:click="submit" >提交</van-button>
+	
+	<van-popup show="{{ show }}" position="bottom" custom-style="height: 60%;" bind:close="onClose">
+		<van-area bind:confirm="addressConfirm" bind:cancel="onClose" area-list="{{ areaList }}" />
+		<!-- <view style="margin-bottom:20px;"></view> -->
+		<!-- <picker mode="region" bindchange="addressConfirm" value="{{areaList}}" custom-item="{{customItem}}"></picker> -->
+	</van-popup>
+	
+</view>

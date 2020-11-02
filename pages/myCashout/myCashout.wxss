@@ -1,0 +1,51 @@
+/* pages/myCashout/myCashout.wxss */
+
+.myCashout{
+	min-height: 100vh;
+	background: #F2F2F2;
+}
+.cashoutBlock{
+	color: rgba(147, 151, 150, 1);
+	width: 100%;
+	background-color: white;
+	padding:30rpx;
+	box-sizing: border-box;
+}
+.cashoutBlockTitle{
+	font-size: 28rpx;
+	margin-bottom: 30rpx;
+}
+.cashoutBlockField{
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid rgba(248, 248, 248, 1);
+	padding-bottom: 20rpx;
+	margin-bottom: 30rpx;
+}
+.cashoutBlockUnit{
+	font-size: 36rpx;
+	margin-right: 10rpx;
+}
+.cashoutBlockInput{
+
+}
+.cashoutBlockTip{
+	display: flex;
+	align-items: center;
+	font-size: 26rpx;
+	
+}
+.cashoutBlockTipLabel{
+
+}
+.cashoutBlockTipMoney{
+	margin-left: 10rpx;
+}
+.cashoutBlockAll{
+	margin-left: auto;
+}
+
+.cashoutBtn{
+	margin-top: 40rpx;
+	font-size: 36rpx;
+}

@@ -1,0 +1,26 @@
+<!--pages/mylevel/mylevel.wxml-->
+<view class="mylevel">
+	<view class="mylevelContainer">
+		<image class='background' src="../../images/vipbg.png" mode="widthFix"></image>
+
+		<view class="userLine">
+			<image wx:if="{{ userInfo.unlogin!=true }}" class="avatar" src="{{ userInfo.avatar }}"></image>
+			<view class="avatarUnlogin" wx:else>
+				<van-icon class="avatarUnloginIcon" name="user-circle-o" />
+			</view>
+
+			<view class="userCenterInfoMid">
+				<view class="userCenterInfoName">{{ userInfo.nickname }}</view>
+				<view class="userCenterInfoLevel">
+					<view class="iconfont icon-mingxing"></view>
+					<view class="userCenterInfoLevelLabel">{{ userInfo.level_name }}</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="userlevelLine">
+			<image class="userlevelLineIcon" src="../../images/vipicon.png" mode="widthFix"></image>
+			<view class="userlevelLineLabel">{{ userInfo.level_name }}</view>
+		</view>
+	</view>
+</view>

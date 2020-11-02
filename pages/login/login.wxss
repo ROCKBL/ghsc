@@ -1,0 +1,43 @@
+/* pages/login/login.wxss */
+
+.pageBg{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10%;
+}
+.overlay-index--van-overlay{
+	background-color: rgba(0,0,0,0.3)!important;
+}
+.pageBgImg{
+	width: 30%;
+}
+
+.pop{
+	
+}
+.tip{
+	font-size: 30rpx;
+	color: #999999;
+	margin-top: 30px;
+	text-align: center;
+}
+button:not([size='mini']){
+	width:initial;
+}
+.btnWrap{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 20px;
+
+}
+.cancelBtn{
+	width: 40%!important;
+	/* padding:10rpx 20rpx; */
+}
+.confirmBtn{
+	width: 40%!important;
+	/* padding:10rpx 20rpx; */
+}

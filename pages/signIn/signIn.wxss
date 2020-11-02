@@ -1,0 +1,147 @@
+/* pages/signIn/signIn.wxss */
+
+.containerSignIn{
+	padding: 0px 26rpx;
+	background: #F8F8F8;
+	min-height: 100vh;
+	padding-top: 20rpx;
+}
+
+.userCenterInfo{
+	display: flex;
+	align-items: center;
+	padding: 40rpx;
+	background-color: white;
+	margin-bottom: 20rpx;
+}
+.avatar{
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	margin-right: 20rpx;
+}
+.avatarUnlogin{
+	width: 100rpx;
+	height: 100rpx;
+	margin-right: 20rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.avatarUnloginIcon{
+	font-size: 100rpx;
+}
+.userCenterInfoName{
+	color: #333333;
+	font: 30rpx;
+	margin-bottom: 20rpx;
+}
+.userCenterInfoLevel{
+	display: flex;
+	align-items: center;
+	border-radius: 0px 16rpx 16rpx 16rpx;
+	background: #3B3B3B;
+	color: #FFD4A5;
+	font-size: 22rpx;
+	padding: 10rpx 16rpx;
+}
+.icon-putonghuiyuan{
+	font-size: 22rpx;
+	margin-right: 8rpx;
+}
+
+.signInBox{
+	background: #E9D5AA;
+	border-radius: 2px;
+	padding-bottom: 30px;
+}
+
+.signInBoxTitle{
+	color: white;
+	font-size: 30rpx;
+	margin-left: 12px;
+	padding-top: 14px;
+}
+
+.signInBoxBtn{
+	color: #CFB57A!important;
+	background-color: white!important;
+	width: 80%!important;
+	margin-top: 10px;
+}
+
+.signInBoxLine{
+	display: flex;
+	width: calc(100% - 30px);
+	margin:auto;
+	justify-content: space-around;
+	position: relative;
+	/* margin-top: 20px; */
+}
+.longLine{
+	width: 100%;
+	position: absolute;
+	border: 1px solid #CFB57A;
+	bottom: 30px;
+}
+.signInBoxLineItem{
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-end;
+	
+}
+.signInBoxLineItemGift{
+	margin-bottom: 8px;
+	background-color: #CFB57A;
+	border-radius: 0 50% 50% 50%;
+	width: 50rpx;
+	height: 50rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: rotate(-135deg);
+}
+.giftIcon{
+	transform: rotate(135deg);
+}
+
+.signInBoxLineItemLabel{
+	color: white;
+	font-size: 26rpx;
+	margin-top: 5px;
+}
+/* .signInBoxLineItemUnit{
+	display: flex;
+	align-items: center;
+}
+.shortLine{	
+	width: 14rpx;
+	border: 1px solid #CFB57A;
+}
+.rightLine{
+	flex-grow: 1;
+	border: 1px solid #CFB57A;
+} */
+.signInBoxLineItemUnitBall{
+	width: 50rpx;
+	height: 50rpx;
+	border-radius: 50%;
+	font-size: 20rpx;
+	color: #EAD5AA;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #CFB673;
+}
+.signInBoxLineItemUnitBallChecked{
+	width: 50rpx;
+	height: 50rpx;
+	border-radius: 50%;
+	font-size: 20rpx;
+	color: #CFB673;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+}

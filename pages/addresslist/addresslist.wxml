@@ -1,0 +1,27 @@
+<!--pages/addresslist/addresslist.wxml-->
+<view class="addresslist">
+	<view class="addresslistWrap">
+		<!-- <view class="topLine" wx:if="{{ addresslist.length>0 }}"></view> -->
+		<view class="addressUnit" wx:for="{{ addresslist }}" wx:key="id">
+			<view class="addressUnitLeft">
+				<view class="addressName">{{ item.name }}</view>
+				<view class="addressDefaultActive" wx:if="{{ item.status==1 }}">默认</view>
+				<view class="addressDefaultUnactive" data-item="{{ item }}" bindtap="setDefault" wx:else>设为默认</view>
+			</view>
+			<view class="addressUnitMid">
+				<view class="addressPhone">{{ item.mobile }}</view>
+				<view class="addressArea">{{ item.areaStr }}{{ item.address }}</view>
+			</view>
+			<view class="addressUnitRight">
+				<van-icon class="addressIcon" name="edit" data-item="{{ item }}" bind:click="editAddress" size="40rpx"/>
+				<van-icon class="addressIcon" name="delete" data-item="{{ item }}" bind:click="deleteAddress" size="40rpx"/>
+			</view>
+		</view>
+	</view>
+	<van-empty wx:if="{{ addresslist.length==0 }}" description="暂无地址" />
+
+	<view style="margin-top:20px;"></view>
+	<view class="bottomBtn">
+		<van-button type="primary" block bind:click="addAddress">+新增地址</van-button>
+	</view>
+</view>

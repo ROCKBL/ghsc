@@ -1,0 +1,31 @@
+/* pages/myinfo/myinfo.wxss */
+
+.myinfo{
+	height: 100vh;
+	background: #F2F2F2;
+	padding-top: 5px;
+}
+
+.cellsBlock{
+	margin-bottom: 5px;
+}
+.avatarWrap{
+	height:25px;
+}
+
+.avatar{
+	height: 25px;
+	border-radius: 50%;
+	width: 25px;
+}
+.avatarUnlogin{
+	width: 25px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.avatarUnloginIcon{
+	font-size: 25px;
+}
+

@@ -1,0 +1,9 @@
+<!--pages/mypoints/mypoints.wxml-->
+<view class="pointsPage">
+	<view class="pointsBlock">
+		<image class="pointsImg" mode="aspectFit" src="{{ picSrc }}"></image>
+		<view class="pointsValue">{{ userInfo.integral }}</view>
+		<view class="pointsLabel">可使用积分</view>
+		<button class="pointsBtn" type="primary" size="mini" bindtap="gouse">去使用</button>
+	</view>
+</view>

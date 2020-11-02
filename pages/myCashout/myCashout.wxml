@@ -1,0 +1,21 @@
+<!--pages/myCashout/myCashout.wxml-->
+<view class="myCashout">
+	<van-notice-bar scrollable="{{ false }}" text="完善银行卡信息，才可及时获得收益奖励哦！" />
+	<view class="cashoutBlock">
+		<view class="cashoutBlockTitle">提现金额</view>
+		<view class="cashoutBlockField">
+			<view class="cashoutBlockUnit">￥</view>
+			<input class="cashoutBlockInput" type="digit" value="{{ cashoutMoney }}" bindinput="onInput" placeholder="请输入提现金额"/>
+		</view>
+		<view class="cashoutBlockTip">
+			<view class="cashoutBlockTipLabel">可提现金额</view>
+			<view class="cashoutBlockTipMoney">￥{{ userInfo.active_money }}</view>
+			<view class="cashoutBlockAll" bindtap="cashoutall">全部提现</view>
+		</view>
+	</view>
+
+	<button type="primary" class="cashoutBtn" bindtap="submit">申请提现</button>
+	<view>
+	
+	</view>
+</view>

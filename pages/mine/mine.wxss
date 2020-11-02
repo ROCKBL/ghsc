@@ -1,0 +1,222 @@
+/* pages/mine/mine.wxss */
+.containerMine{
+	padding: 0px 26rpx;
+	background: #F8F8F8;
+}
+.mineBlock{
+	/* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1); */
+	background-color: white;
+	border-radius: 2px;
+	margin-bottom: 10px;
+}
+
+/* 用户中心 */
+.userCenterInfo{
+	display: flex;
+	align-items: center;
+	padding: 40rpx;
+}
+.avatar{
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	margin-right: 20rpx;
+}
+.avatarUnlogin{
+	width: 100rpx;
+	height: 100rpx;
+	margin-right: 20rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.avatarUnloginIcon{
+	font-size: 100rpx;
+}
+
+.userCenterInfoName{
+	color: #333333;
+	font: 30rpx;
+	margin-bottom: 20rpx;
+}
+.userCenterInfoLevel{
+	display: flex;
+	align-items: center;
+	border-radius: 0px 16rpx 16rpx 16rpx;
+	background: #3B3B3B;
+	color: #FFD4A5;
+	font-size: 22rpx;
+	padding: 10rpx 16rpx;
+}
+.icon-putonghuiyuan{
+	font-size: 22rpx;
+	margin-right: 8rpx;
+}
+
+.userCenterScope{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.userCenterScopeUnit{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20rpx;
+}
+.userCenterScopeUnitName{
+	color: #939796;
+	font-size: 30rpx;
+	margin-bottom: 20rpx;
+}
+.userCenterScopeUnitValue{
+	color: #EE0B39;
+	font-size: 44rpx;
+}
+
+.userCenterVip{
+	display: flex;
+	align-items: center;
+	background: linear-gradient(90deg, #C4CBCB 0%, #8B9A9A 100%);
+	padding: 30rpx ;
+}
+.userCenterVipLabel{
+	display: flex;
+	align-items: center;
+	color: #39B196;
+	font-size: 30rpx;
+}
+.userCenterVipBtn{
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	font-size: 24rpx;
+	color: white;
+}
+
+/* 订单中心 */
+.orderCenter{
+	padding: 30rpx 0px;
+}
+.orderCenterHead{
+	display: flex;
+	align-items: center;
+	font-size: 34rpx;
+	margin-bottom: 40rpx;
+	padding: 0px 40rpx;
+}
+.orderCenterHeadBtn{
+	margin-left: auto;
+	font-size: 24rpx;
+	color: #939796;
+	display: flex;
+	align-items: center;
+}
+.orderCenterBody{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 40rpx;
+}
+.orderCenter .iconfont{
+	font-size:50rpx;
+	color: black;
+}
+.orderCenter .icon-daishouhuo{
+	font-weight: 500;
+	font-size: 58rpx;
+}
+.orderCenter .icon-pingjia{
+	font-size: 56rpx;
+}
+
+.orderCenterUnit{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.orderCenterUnitName{
+	color: #333333;
+	font-size: 26rpx;
+	margin-top: 10rpx;
+}
+
+/* banner */
+.banner{
+	width: 100%;
+}
+
+/* 常用工具 */
+.tools{
+	padding-top: 30rpx;
+}
+.toolsLabel{
+	font-size: 34rpx;
+	padding: 0px 40rpx;
+	margin-bottom: 40rpx;
+}
+.toolUnit{
+	/* position: relative; */
+	
+}
+.tools .iconfont{
+	font-size:58rpx;
+	color: black;
+	height: 70rpx;
+
+}
+.toolname{
+	font-size: 26rpx;
+	color: #939796;
+	margin-top: 20rpx;
+}
+.tools .icon-dizhi1{
+	font-size:70rpx;
+}
+.tools .icon-jifen1{
+	font-weight: bold;
+	font-size:66rpx;
+}
+.tools .icon-tuandui{
+	font-size:70rpx;
+}
+.tools .icon-liwuhuodong{
+	font-size:70rpx;
+}
+.tools .icon-tixian{
+	font-size:64rpx;
+}
+.tools .icon-wodeziliao{
+	font-size:64rpx;
+}
+
+
+/* 更多服务 */
+.service{
+	padding-top: 30rpx;
+}
+.serviceLabel{
+	font-size: 34rpx;
+	padding: 0px 40rpx;
+	margin-bottom: 40rpx;
+}
+.van-cell__title{
+	color: #333333;
+}
+.service .iconfont{
+	margin-right:30rpx;
+	color: black;
+	font-size:60rpx;
+}
+.service .icon-supplier{
+	font-size:56rpx;
+}
+.service .icon-huaban27{
+	font-size:66rpx;
+}
+.service .icon-web-icon-{
+	font-size:66rpx;
+}
+.service .icon-xueshimaoxuexibiye{
+	font-size:66rpx;
+}

@@ -1,0 +1,23 @@
+<!--pages/login/login.wxml-->
+<view>
+	<view class="pageBg">
+		<image class="pageBgImg" mode="widthFix"  src="../../images/loginPage.png"></image>
+	</view>
+	
+	<!-- 手机号授权 -->
+	<van-popup class="pop" show="{{ phoneShow }}" round position="bottom" custom-style="height: 30%" bind:close="onClose">
+		<view class="tip">恭汇商城申请获取您的电话号码,进行后续登录</view>
+		<view class="btnWrap">
+			<button class='cancelBtn' type="primary" plain="true" bindtap="cancelPhone" >取消</button>
+			<button class='confirmBtn' type="primary" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">接受</button>
+		</view>
+	</van-popup>
+	<!-- 用户信息授权 -->
+	<van-popup class="pop" show="{{ userInfoShow }}" round position="bottom" custom-style="height: 30%" bind:close="onClose">
+		<view class="tip">恭汇商城申请获取您的昵称，头像等信息</view>
+		<view class="btnWrap">
+			<button class='cancelBtn' type="primary" plain="true" bindtap="cancelUserInfo" >取消</button>
+			<button class='confirmBtn' type="primary" open-type='getUserInfo' bindgetuserinfo="getUserInfo">接受</button>
+		</view>
+	</van-popup>
+</view>

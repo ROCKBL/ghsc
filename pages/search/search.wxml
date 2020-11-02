@@ -1,0 +1,22 @@
+<!--pages/search/search.wxml-->
+<wxs src="../../utils/pageHelper.wxs" module="pageHelper" />
+
+<view class="containerSearch">
+	<view class="searchRow">
+		<!-- <van-icon class="searchRowIcon" name="arrow-left" bind:click="goback" /> -->
+		<van-search class="searchRowBox" value="{{ searchValue }}" use-action-slot bind:search="onSearch" bind:change="onSearchChange" placeholder="即食燕窝" >
+			<view slot="action" bind:tap="onSearch">搜索</view>
+		</van-search>
+	</view>
+	
+
+	<view class="history" wx:if="{{ history.length>0 }}">
+		<view class="historyHead">
+			<view class="headLabel">搜索历史</view>
+			<van-icon class="headIcon" name="delete" bind:click="deleteHistory" />
+		</view>
+		<view class="historyBody">
+			<view class="historyWords" wx:for="{{ history }}" wx:key="*this" bindtap="searchHistory" data-words="{{ item }}">{{ item }}</view>
+		</view>
+	</view>
+</view>

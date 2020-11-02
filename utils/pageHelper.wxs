@@ -1,0 +1,13 @@
+
+
+var strToAr = function (str) {
+	// console.log(str)
+	// console.log(JSON.parse(str))
+  	return JSON.parse(str);
+}
+
+
+module.exports = {
+	strToAr: strToAr,
+
+};

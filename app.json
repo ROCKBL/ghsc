@@ -1,0 +1,45 @@
+{
+	"pages": [
+		"pages/myCashout/myCashout",
+		"pages/index/index",
+		"pages/signIn/signIn",
+		"pages/mine/mine",
+		"pages/classification/classification",
+		"pages/cart/cart",
+		"pages/search/search",
+		"pages/login/login",
+		"pages/logs/logs",
+		"pages/myposters/myposters",
+		"pages/mylevel/mylevel",
+		"pages/addresslist/addresslist",
+		"pages/editaddress/editaddress",
+		"pages/changeNickName/changeNickName",
+		"pages/mybankcard/mybankcard",
+		"pages/myinfo/myinfo",
+		"pages/myBalance/myBalance",
+		"pages/mypoints/mypoints",
+		
+		"pages/myCashoutHistory/myCashoutHistory"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "恭汇商城",
+		"navigationBarTextStyle": "black"
+	},
+	"style": "v2",
+	"sitemapLocation": "sitemap.json",
+	"usingComponents": {
+		"van-icon": "@vant/weapp/icon/index",
+		"van-empty": "@vant/weapp/empty/index",
+		"van-button": "@vant/weapp/button/index",
+		"van-field": "@vant/weapp/field/index",
+		"van-area": "@vant/weapp/area/index",
+		"van-popup": "@vant/weapp/popup/index",
+		"van-cell": "@vant/weapp/cell/index",
+		"van-cell-group": "@vant/weapp/cell-group/index",
+		"van-datetime-picker": "@vant/weapp/datetime-picker/index",
+		"van-picker": "@vant/weapp/picker/index",
+		"van-notice-bar": "@vant/weapp/notice-bar/index"
+	}
+}

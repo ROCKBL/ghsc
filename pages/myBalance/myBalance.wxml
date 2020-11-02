@@ -1,0 +1,12 @@
+<!--pages/myBalance/myBalance.wxml-->
+<view class="balancePage">
+	<view class="balanceBlock">
+		<image class="balanceImg" mode="aspectFit" src="{{ picSrc }}"></image>
+		<view class="balanceValue">{{ userInfo.active_money }}</view>
+		<view class="balanceLabel">可提现余额（元）</view>
+		<view class="balanceBtns">
+			<button class="balanceBtn1" type="primary" plain="true" size="mini" bindtap="goCashout">提现</button>
+			<button class="balanceBtn2" type="primary" size="mini" bindtap="goCashoutHistory">提现记录</button>
+		</view>		
+	</view>
+</view>

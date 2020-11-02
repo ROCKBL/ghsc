@@ -1,0 +1,124 @@
+<wxs src="../../utils/pageHelper.wxs" module="pageHelper" />
+
+<view class="containerIndex">
+    <van-search  value="{{ searchValue }}" bind:search="onSearch" bind:focus="onFocus" bind:change="onSearchChange" placeholder="即食燕窝" />
+    <!-- 轮播图 -->
+    <swiper indicator-dots="{{ true }}" autoplay="{{ true }}" circular="{{ true }}" style="height:170px">
+        <block wx:for="{{ carouselList }}" wx:key="id">
+            <swiper-item>
+                <view  class="adImage">
+                    <image src="{{item.img}}"></image>
+                </view>
+            </swiper-item>
+        </block>   
+   </swiper>
+    
+    <!-- 签到 -->
+    <view class="signIn" bindtap="goSignIn">
+        <van-icon class="signInIcon" name="calendar-o" />
+        <view>签到</view>
+    </view>
+
+    <!-- 商品分类 -->
+    <van-grid column-num="5" border="{{ false }}">
+        <van-grid-item use-slot wx:for="{{ cateList }}" wx:key="id" bind:click="clickCate" data-item="{{ item }}">
+            <image class="cateImg"  src="{{ item.cate_img }}" />
+            <text class="cateText">{{ item.name }}</text>
+        </van-grid-item>
+    </van-grid>
+
+    <image class="banner" mode="widthFix" src="../../images/index1.png"></image>
+    
+    <!-- 限时抢购 -->
+    <view class="timeLimit" wx:if="{{ time>0 }}">
+        <view class="timeLimitHead">
+            <van-icon class="clockIcon" name="clock-o" />
+            <view class="headLabel">限时抢购</view>
+            <van-count-down use-slot time="{{ time }}" bind:change="onTimeChange">
+                <text class="countItem">{{ timeData.hours }}</text>:
+                <text class="countItem">{{ timeData.minutes }}</text>:
+                <text class="countItem">{{ timeData.seconds }}</text>
+            </van-count-down>
+            <view class="timeLimitMore">更多<van-icon name="arrow" /></view>
+        </view>
+        
+        <van-grid column-num="3" border="{{ false }}" wx:if="timeLimitGoods.length>0">
+            <van-grid-item use-slot wx:for="{{ timeLimitGoods }}" wx:key="id" wx:for-item="itemName" bind:click="clickTimeLimitGoods" data-item="{{ itemName }}">
+                <view class="goodsImgWrapTimeLine">
+                    <image mode="aspectFit" class="timiLimitImg goodsImg"  src="{{ itemName.cover_img }}" />
+                </view>
+                
+                
+                <!-- tags -->
+                <!-- introduce -->
+                <!-- show_vip_price -->
+                <!-- show_price -->
+                <view class="tagsWrap">
+                    <view class="tag" wx:for="{{ pageHelper.strToAr(itemName.tags) }}" wx:key="*this">{{ item }}</view>
+                </view>
+                
+                <view class="introduce">{{ itemName.introduce }}</view>
+                <view class="priceWrap">
+                    <image mode="widthFix" class="vipImg" src="../../images/vip.png"></image>
+                    <view class="vipPrice">￥{{ itemName.show_vip_price }}</view>
+                    <view class="price">￥{{ itemName.show_price }}</view>
+                </view>
+                <!-- <text class="iconfont icon-vip3" ></text> -->
+                <!-- <text class="cateText">{{ item.name }}</text> -->
+            </van-grid-item>
+        </van-grid>
+
+        
+    </view>
+
+    <image class="banner" mode="widthFix" src="../../images/index2.png"></image>
+    <view>会员限量抢购</view>
+    <image class="banner" mode="widthFix" src="../../images/index3.png"></image>
+    <view>拼团专区</view>
+    <image class="banner" mode="widthFix" src="../../images/index4.png"></image>
+    <view>品牌专区</view>
+    <image class="banner" mode="widthFix" src="../../images/index5.png"></image>
+
+    <!-- 推荐商品 -->
+    <view class="recommend">
+        <view class="recommendHead">
+            <van-icon class="recommendHeadIcon" name="thumb-circle" />
+            
+        </view>
+        <van-divider contentPosition="center" customStyle="color: #333333; border-color: #39B196; font-size: 30rpx;padding:0px 20%;margin:0px">
+            推荐商品
+        </van-divider>
+        
+        <scroll-view scroll-y="{{ true }}" bindscrolltolower="loadMoreRecommendGoods" style="height: 100vh;">
+            <van-grid class="grid" column-num="2" border="{{ false }}" gutter="{{ 5 }}">
+                <van-grid-item use-slot wx:for="{{ recommendGoods }}" wx:key="id">
+                    <view class="goodsImgWrap">
+                        <image mode="aspectFit" class="goodsImg" src="{{ item.cover_img }}"/>
+                    </view>
+                    
+
+                    <view class="recommendGoodsName">{{ item.name }}</view>
+                    <view class="priceWrap">
+                        <image mode="widthFix" class="vipImg" src="../../images/vip.png"></image>
+                        <view class="vipPrice">￥{{ item.show_vip_price }}</view>
+                        <view class="price">￥{{ item.show_price }}</view>
+                        <view class="sellNum">热销{{ item.sell_num }}</view>
+                    </view>
+                    <view class="btnWrap">
+                        <button class="shareBtn" plain="{{ true }}" type="primary" open-type="share">分享</button>
+                        <button class="addCartBtn" type="primary" >加入购物车</button>
+                    </view>
+                </van-grid-item>
+            </van-grid>
+        </scroll-view>
+        <view class="recommendTip" wx:if="{{ finished }}">没有更多商品了</view>
+        
+    </view>
+
+    <view style="height:50px;"></view>
+    <van-tabbar active="{{ active }}" active-color="#39B196" inactive-color="#515151" bind:change="onChange">
+        <van-tabbar-item icon="{{ item.icon }}" wx:for="{{ tabbarList }}" wx:key="icon">{{ item.label }}</van-tabbar-item>
+    </van-tabbar>
+</view>
+
+
